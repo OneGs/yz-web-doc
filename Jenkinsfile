@@ -11,4 +11,11 @@ pipeline {
             }
         }
     }
+    stages {
+            stage('拉去最新代码') {
+                steps {
+                    sh 'git pull up'
+                }
+            }
+        }
 }
