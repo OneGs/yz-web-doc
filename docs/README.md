@@ -1,23 +1,15 @@
 ---
 home: true
 heroImage: /hero.png
-heroText: Hero 标题
-tagline: Hero 副标题
-actionText: 快速上手 →
+heroText: 前端规范库 & 知识库
+tagline: 让团队开发更敏捷
+actionText: 从规范开始 →
 actionLink: /zh/guide/
 features:
-- title: 简洁至上
-  details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。
-- title: Vue驱动
-  details: 享受 Vue + webpack 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
-- title: 高性能
-  details: VuePress 为每个页面预渲染生成静态的 HTML，同时在页面被加载的时候，将作为 SPA 运行。
+- title: 规范
+  details: 专注规范，团队开发轻松以维护。包括：命名规范、书写规范、Css规范、Js规范...
+- title: 组件化
+  details: 构建符合产品的独立第三方组件库。加强组件跨用户,跨系统地使用。
 footer: MIT Licensed | Copyright © 2018-present Evan You
 sidebarDepth: 0
 ---
-
-# 益政前端文档
-
-## 1
-
-## 2
