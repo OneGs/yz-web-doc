@@ -24,11 +24,16 @@ module.exports = {
         sidebar: {
             '/components/': [
                 '',
-                'searchTable'
+                'SearchTable'
             ],
 
             '/specification/': [
-
+                '',
+                'Name',
+                'FileLayout',
+                'HTML',
+                'Css',
+                'JavaScript'
             ],
 
             '/': [''],
