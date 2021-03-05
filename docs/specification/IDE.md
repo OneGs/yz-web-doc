@@ -14,7 +14,7 @@
 
 根据官方文档（非本文档）配置完成后，示例：
 
-<img :src="$withBase('/images/specification/vs-theme.png')" alt="加
+<img :src="$withBase('/images/specification/vs-theme.png')" alt="error">
 
 ### 自动闭合标签 & 括号闭合颜色
 
