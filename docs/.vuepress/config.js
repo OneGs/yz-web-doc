@@ -4,7 +4,7 @@ module.exports = {
     title: '益政前端文档',
 
     head: [
-        ['link', { rel: 'icon', href: '/favicons.ico' }]
+        ['link', {rel: 'icon', href: '/favicons.ico'}]
     ],
 
     description: 'Just playing around',
@@ -15,8 +15,8 @@ module.exports = {
             {
                 text: 'Docs',
                 items: [
-                    { text: 'specification', link: '/specification/' },
-                    { text: 'components', link: '/components/' }
+                    {text: '代码规范', link: '/specification/'},
+                    {text: '通用组件', link: '/components/'}
                 ]
             },
         ],
@@ -28,12 +28,14 @@ module.exports = {
             ],
 
             '/specification/': [
-                '',
-                'Name',
-                'FileLayout',
-                'HTML',
-                'Css',
-                'JavaScript'
+                {
+                    title: '代码规范',
+                    children: ['Name', 'FileLayout', 'HTML', 'Css', 'JavaScript']
+                },
+                {
+                    title: '其它',
+                    children: ['IDE']
+                },
             ],
 
             '/': [''],
