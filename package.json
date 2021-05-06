@@ -10,6 +10,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "node-sass": "^4.0.0",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "sass-loader": "^9.0.3",
     "vuepress": "^1.8.0"
-  }
+  },
+  "dependencies": {}
 }

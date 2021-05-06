@@ -76,10 +76,10 @@ vsCode对于eslint的支持非开箱即用，还需要进行一些配置：
     
     添加如下代码：
     
-    ```javascript
-   "editor.codeActionsOnSave": {
-       "source.fixAll": true
-   }
+    ```js
+        "editor.codeActionsOnSave": {
+            "source.fixAll": true
+        }
     ```
    
    点击保存，至此。已经可以做到点击保存`ctrl + s`自动修复。

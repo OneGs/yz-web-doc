@@ -4,7 +4,7 @@ heroImage: /main.png
 heroText: 前端规范库 & 知识库
 tagline: 让团队开发更敏捷
 actionText: 从规范开始 →
-actionLink: /specification/
+actionLink: /specification/Name.md
 features:
 - title: 规范
   details: 专注规范，团队开发轻松以维护。包括：命名规范、书写规范、Css规范、Js规范...

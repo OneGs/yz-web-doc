@@ -294,3 +294,74 @@ $el-namespace: 'el';
 上述为BEM在项目中的重要代码块，也是之后所需要用到的重要混入。
 
 <TheLayout />
+
+上述的例子中：
+```html
+<div class="sw-layout">
+    <div class="sw-layout__header">header</div>
+    <div class="sw-layout__main">
+        <div class="sw-layout__aside">
+            aside <span class="sw-layout--waring">警告</span>
+        </div>
+        <div class="sw-layout__content">
+            content
+        </div>
+    </div>
+</div>
+```
+从外到内：分为block: `sw-layout`、元素header: `sw-layout__header`, 元素main: `sw-layout__main`。
+
+main元素中又包含了aside和content元素，`sw-layout__aside、sw-layout__content`。
+
+在aside元素，有一个提醒选项。属于修饰符（可以是，成功、错误、警告等等修饰），`sw-layout--waring`。
+
+从一开始执行好样式格局之后，就很好写css样式了。
+```scss
+%basePanel {
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 16px;
+}
+
+@include b(layout) { // 定义block
+  @extend %basePanel;
+
+  height: 150px;
+
+  @include e(header) { // 定义元素header
+    @extend %basePanel;
+
+    height: 50px;
+    background: antiquewhite;
+  }
+
+  @include e(main) {
+    height: 100px;
+
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  @include e(aside) {
+    @extend %basePanel;
+
+    width: 30%;
+    background: cadetblue;
+  }
+
+  @include e(content) {
+    @extend %basePanel;
+
+    width: 70%;
+    background: #b4bccc;
+  }
+
+  @include m(waring) { // 定义修饰符 waring
+    color: red;
+  }
+}
+```
+
+### tailWindCss在项目中的使用
+
+暂定

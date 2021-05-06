@@ -30,7 +30,11 @@ module.exports = {
             '/specification/': [
                 {
                     title: '代码规范',
-                    children: ['Name', 'FileLayout', 'HTML', 'Css', 'JavaScript']
+                    children: ['Name', 'Code']
+                },
+                {
+                    title: '项目经验',
+                    children: []
                 },
                 {
                     title: '其它',
@@ -40,5 +44,5 @@ module.exports = {
 
             '/': [''],
         }
-    }
+    },
 }
