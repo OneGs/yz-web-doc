@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "element-ui": "^2.15.1",
-    "ly-com": "^0.1.6",
+    "ly-com": "^0.1.8",
     "mockjs": "^1.1.0"
   }
 }

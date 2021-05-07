@@ -106,4 +106,117 @@ tableProps是一个对象数组，其对象可支持`prop name align width forma
 
 ## 初始化搜索条件
 
-有时候，需求不仅仅是根据查询条件获取值，
+有时候，初始情况下带有查询内容，且重置时也恢复到最初的情况下！
+
+很幸运，`queryParams.sync`默认自带记忆功能。只要初始值存在，那么组件将会在重置时恢复到最初情况。
+
+<SearchTable-ResetRemember />
+
+```html {7}
+<template>
+    <ly-search-table
+            is-index
+            is-paging
+            :data-function="_initUsers"
+            :table-props="tableProps"
+            :query-params.sync="queryParams"
+            class="sw-three-structs"
+    >
+        <template #search>
+            <el-form-item label="姓名">
+                <el-input v-model="queryParams.name"/>
+            </el-form-item>
+            <el-form-item label="行吧">
+                <el-select v-model="queryParams.sex">
+                    <el-option label="全部" :value="null"></el-option>
+                    <el-option label="男" value="男"></el-option>
+                    <el-option label="女" value="女"></el-option>
+                </el-select>
+            </el-form-item>
+        </template>
+        <template #table>
+            <el-table-column label="测试(name)" prop="name" />
+        </template>
+    </ly-search-table>
+</template>
+```
+
+```js
+data() {
+    return {
+      queryParams: {
+        name: null,
+        sex: '男' // 默认为男性
+      }
+    }
+  },
+```
+
+::: warning
+如果想缓存初始状态，一定要使用`.sync`修饰符。
+:::
+
+## 自适应高度的10列数据
+
+当前页数据大小为10，整个表格内容区的高度大于440时。可以通过设置`isAutoHeight`将10列数据扩充满整个表格区域。
+
+没有自适应高度
+
+<SearchTable-AutoHeight />
+
+自适应高度
+
+<SearchTable-AutoHeight is-auto-height />
+
+可以看到，之前多出来的空白空间被全部填充。
+
+## 翻页记录保持
+
+## selection的分页选择 & 数据回显
+
+elementUI对表格选择和分页的处理是分开，这样的设计拥有很好的解耦性。
+
+但是，同样给用户开发造成了重复性，因此在这里实现了对于分页数据的选择和回显。
+
+`isSelection=true`会将selection选项打开，同时为table设置一个`row-key`作为唯一标识，此时你已经可以进行自由的选择了！
+
+<SearchTable-SelectionPaging />
+
+```html
+<template>
+  <ly-search-table
+      ref="searchTable"
+      is-index
+      is-paging
+      is-selection
+      v-bind="$attrs"
+      row-key="index"
+      :data-function="_initUsers"
+      :table-props="tableProps"
+      class="sw-selection-paging"
+  >
+    <template #search>
+      <el-form-item class="ly-search-table__search--right">
+        <el-button type="warning" @click="handleClear">取消选择</el-button>
+        <el-button type="primary" @click="handleShow">选择</el-button>
+      </el-form-item>
+    </template>
+  </ly-search-table>
+</template>
+```
+
+```js
+export default {
+    methods: {
+        _initUsers: userPaging,
+
+        handleClear() {
+            this.$refs.searchTable && this.$refs.searchTable.clearSelectionData() // 清除选中的数据
+        },
+
+        handleShow() {
+            console.log(this.$refs.searchTable.lineListSelections) // 获取选中的数据
+        }
+    }
+}
+```
