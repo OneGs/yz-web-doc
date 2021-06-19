@@ -16,13 +16,11 @@
 
 当你需要编辑一个组件或查阅一个组件的用法时，可以更快速的找到它。
 
-
 ### 单文件组件文件的大小写
 
 **单文件组件的文件名应该要么始终是单词大写开头 (PascalCase)。**
 
 单词大写开头对于代码编辑器的自动补全最为友好，因为这使得我们在 JS(X) 和模板中引用组件的方式尽可能地一致。然而，混用文件命名方式有的时候会导致大小写不敏感的文件系统的问题，这也是横线连接命名同样完全可取的原因。
-
 
 ### 基础组件名
 
@@ -44,6 +42,7 @@ components/
 这不意味着组件只可用于一个单页面，而是每个页面只使用一次。这些组件永远不接受任何 prop，因为它们是为你的应用定制的，而不是它们在你的应用中的上下文。如果你发现有必要添加 prop，那就表明这实际上是一个可复用的组件，只是目前在每个页面里只使用一次。
 
 反例：
+
 ```text
 components/
 |- Heading.vue
@@ -51,6 +50,7 @@ components/
 ```
 
 好例子：
+
 ```text
 components/
 |- TheHeading.vue
@@ -64,6 +64,7 @@ components/
 如果一个组件只在某个父组件的场景下有意义，这层关系应该体现在其名字上。因为编辑器通常会按字母顺序组织文件，所以这样做可以把相关联的文件排在一起。
 
 好例子：
+
 ```text
 views/someView/
 |- index.vue
@@ -78,6 +79,7 @@ views/someView/
 **组件名应该以高级别的 (通常是一般化描述的) 单词开头，以描述性的修饰词结尾。**
 
 好例子：
+
 ```text
 components/
 |- SearchButtonClear.vue
@@ -110,6 +112,7 @@ PascalCase 相比 kebab-case 有一些优势：
 编辑器中的自动补全已经让书写长命名的代价非常之低了，而其带来的明确性却是非常宝贵的。不常用的缩写尤其应该避免。
 
 好例子：
+
 ```text
 components/
 |- StudentDashboardSettings.vue
@@ -127,11 +130,13 @@ components/
 我们单纯的遵循每个语言的约定。在 JavaScript 中更自然的是 camelCase。而在 HTML 中则是 kebab-case。
 
 好例子：
+
 ```js
 props: {
     greetingText: String
 }
 ```
+
 ```html
 <WelcomeMessage greeting-text="hi"/>
 ```
@@ -145,6 +150,7 @@ props: {
 **魔法值为只读、不可修改的值，统一全部大写标识**
 
 好例子：
+
 ```js
 const MAX_HEIGHT = '30px'
 
@@ -152,7 +158,6 @@ const ORIGIN_OBJECT = Object.freeze({
     name: 'onegs'
 })
 ```
-
 
 ## css命名
 
@@ -187,6 +192,7 @@ $--color-primary-light-3: mix($--color-white, $--color-primary, 30%);
 ```
 
 config.scss
+
 ```scss
 $namespace: 'sw'; // 命名空间
 $element-separator: '__'; // block分隔符
@@ -195,6 +201,7 @@ $state-prefix: 'is-'; // status描述符
 ```
 
 mixins.scss
+
 ```scss
 @import "config";
 @import "function";
@@ -296,6 +303,7 @@ $el-namespace: 'el';
 <TheLayout />
 
 上述的例子中：
+
 ```html
 <div class="sw-layout">
     <div class="sw-layout__header">header</div>
@@ -309,6 +317,7 @@ $el-namespace: 'el';
     </div>
 </div>
 ```
+
 从外到内：分为block: `sw-layout`、元素header: `sw-layout__header`, 元素main: `sw-layout__main`。
 
 main元素中又包含了aside和content元素，`sw-layout__aside、sw-layout__content`。
@@ -316,6 +325,7 @@ main元素中又包含了aside和content元素，`sw-layout__aside、sw-layout__
 在aside元素，有一个提醒选项。属于修饰符（可以是，成功、错误、警告等等修饰），`sw-layout--waring`。
 
 从一开始执行好样式格局之后，就很好写css样式了。
+
 ```scss
 %basePanel {
   box-sizing: border-box;

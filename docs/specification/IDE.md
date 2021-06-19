@@ -6,7 +6,7 @@
 
 一个赏心悦目的开发环境，能促进打工人打工时的工作效率。因此，首先让我们的VsCode支楞起来。
 
-推荐插件: 
+推荐插件:
 
 * **material theme**：应用最广泛的主题样式之一，具有跨平台统一主题的优势。
 
@@ -73,15 +73,15 @@ vsCode对于eslint的支持非开箱即用，还需要进行一些配置：
 2. 此时已经可以通过在命令框中执行`Eslint: Fix all auto-fixable Problmes`修复问题。如果需要无感知的完成自动修复，那就还需要另行配置：
 
     打开设置文件，进入编辑器选项。 搜索” code action on a save “。 找到匹配项点击”在setting.json中编辑“进入配置文件。
-    
+
     添加如下代码：
-    
+
     ```js
         "editor.codeActionsOnSave": {
             "source.fixAll": true
         }
     ```
-   
+
    点击保存，至此。已经可以做到点击保存`ctrl + s`自动修复。
 
 ## webStorm

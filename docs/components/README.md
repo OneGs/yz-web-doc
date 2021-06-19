@@ -21,6 +21,7 @@
 用npm安装：`npm install -S ly-com`。
 
 导入main.js：
+
 ```js
 import LyCom from 'ly-com';
 

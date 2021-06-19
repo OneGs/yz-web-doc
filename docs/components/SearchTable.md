@@ -82,6 +82,7 @@ export default {
 如果你的数据和上述保持一直，那么你可以直接开箱即用，直接渲染数据，但，万事总不能尽人意，数据结构不完全统一。因此，组件提供了`responseProps`允许你对现有结构进行映射。
 
 `responseProps`的映射关系为：
+
 ```json
 {
   "value": "data", // 返回的数据 可以是 array、 content等
