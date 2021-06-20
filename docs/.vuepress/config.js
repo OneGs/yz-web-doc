@@ -46,11 +46,14 @@ module.exports = {
             '/project/': [
                 {
                     title: '项目升级',
+                    sidebarDepth: 3,
                     children: ['UpdateVueOneToVueTwo']
                 }
             ],
 
             '/': [''],
-        }
+        },
+
+        lastUpdated: 'Last Updated'
     },
 }
