@@ -36,4 +36,18 @@
 
 具体操作步骤如下：
 
-1. 
+1. 将项目按文件夹分成若干个lint块。在这个过程中，可以将不需要lint的文件或文件夹放入到`.eslintignore.js`文件进行忽略。
+
+2. 将需要的lint的文件，按照顺序进行`eslint --fix`。同时检查每一处报错并处理。
+
+	* 在`package.json`编写`"lint:ext": "eslint --ext *.js,.vue src/views/acceptance/** --fix"`脚本。
+
+	* 陆续将`src/views/acceptance/**`换成自己的eslint目录，逐个lint即可。
+
+	<img :src="$withBase('/images/updateVueOneToVueTwo/eslint-script.png')" alt="error">
+
+3. 最后保存。
+
+:::tip
+解决`eslint --fix`报错的方式有多种多样，在现阶段只要能够清除报错就算抓到老鼠的好猫。
+:::
